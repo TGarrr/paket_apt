@@ -3,7 +3,7 @@
 @section('content')
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">
-        <i class="fas fa-user mr-2"></i>
+        <i class="fas fa-file-contract"></i>
         {{ $title }}
     </h1>
 
@@ -27,25 +27,25 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr class="text-center">
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Jabatan</th>
-                            <th>Status</th>
+                            <th>ID CONTRACT</th>
+                            <th>ID TENANT</th>
+                            <th>ID UNIT</th>
+                            <th>TANGGAL MULAI</th>
+                            <th>TANGGAL SELESAI</th>
+                            <th>STATUS KONTRAK </th>
                             <th><i class="fas fa-cog"></i></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="text-center">
-                            <td>Tegar</td>
-                            <td>Gar@gmail.com</td>
+                            <td>CNTR001</td>
+                            <td>TEGAR</td>
+                            <td>1101</td>
+                            <td>12 Des 2025</td>
+                            <td>12 Des 2035</td>
                             <td class="text-center">
-                                <span class="badge badge-dark badge-pill">
-                                    Admin
-                                </span>
-                            </td>
-                            <td>
-                                <span class="badge badge-danger badge-pill">
-                                    Belum ditugaskan
+                                <span class="badge badge-success badge-pill">
+                                    Aktif
                                 </span>
                             </td>
                             <td class="text-center">

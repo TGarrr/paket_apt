@@ -46,7 +46,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item {{ $menuDashboard ?? '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -79,7 +79,74 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                MENU
+                MENU TOWER
+            </div>
+
+
+            <!-- Nav Item - Tower -->
+            <li class="nav-item {{ $menuTower ?? '' }}">
+                <a class="nav-link" href="{{ route('tower') }}">
+                    <i class="fas fa-fw fa-building"></i>
+                    <span>Tower</span></a>
+            </li>
+
+            <!-- Nav Item - Unit -->
+            <li class="nav-item {{ $menuUnit ?? '' }}">
+                <a class="nav-link" href="{{ route('unit') }}">
+                    <i class="fas fa-th-large"></i>
+                    <span>Unit</span></a>
+            </li>
+
+            <!-- Nav Item - Tenant -->
+            <li class="nav-item {{ $menuTenant ?? '' }}">
+                <a class="nav-link" href="{{ route('tenant') }}">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Tenant</span></a>
+            </li>
+
+            <!-- Nav Item - Contract -->
+            <li class="nav-item  {{ $menuContract ?? '' }}">
+                <a class="nav-link" href="{{ route('contract') }}">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Contract</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                MENU PENERIMAAN PAKET
+            </div>
+
+            <!-- Nav Item - Jenis Paket -->
+            <li class="nav-item {{ $menuJenisPaket ?? '' }}">
+                <a class="nav-link" href="{{ route('jenispaket') }}">
+                    <i class="fas fa-tags"></i>
+                    <span>Jenis Paket</span></a>
+            </li>
+
+            <!-- Nav Item - Nama Ekspedisi -->
+            <li class="nav-item {{ $menuNamaEkspedisi ?? '' }}">
+                <a class="nav-link" href="{{ route('namaekspedisi') }}">
+                    <i class="fas fa-truck"></i>
+                    <span>Nama Ekspedisi</span></a>
+            </li>
+
+            <!-- Nav Item - Transaksi -->
+            <li class="nav-item {{ $menuTransaksi ?? '' }}">
+                <a class="nav-link" href="{{ route('transaksi') }}">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Transaksi</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                MENU USER
             </div>
 
             <!-- Nav Item - Charts -->
@@ -89,15 +156,8 @@
                     <span>User</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
-
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <hr class="sidebar-divider">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -146,7 +206,8 @@
                                     Settings
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                    data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

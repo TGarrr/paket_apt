@@ -3,7 +3,7 @@
 @section('content')
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">
-        <i class="fas fa-user mr-2"></i>
+        <i class="fas fa-user-friends"></i>
         {{ $title }}
     </h1>
 
@@ -27,27 +27,21 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr class="text-center">
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Jabatan</th>
-                            <th>Status</th>
+                            <th>ID TENANT</th>
+                            <th>NAMA TENANT</th>
+                            <th>NOMOR HANDPHONE</th>
+                            <th>EMAIL</th>
+                            <th>ID UNIT</th>
                             <th><i class="fas fa-cog"></i></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="text-center">
+                            <td>TNT001</td>
                             <td>Tegar</td>
-                            <td>Gar@gmail.com</td>
-                            <td class="text-center">
-                                <span class="badge badge-dark badge-pill">
-                                    Admin
-                                </span>
-                            </td>
-                            <td>
-                                <span class="badge badge-danger badge-pill">
-                                    Belum ditugaskan
-                                </span>
-                            </td>
+                            <td>087777777</td>
+                            <td>tegar@gmail.com</td>
+                            <td>1101</td>
                             <td class="text-center">
                                 <a href="#" class="btn btn-warning btn-sm">
                                     <i class="fas fa-edit"></i>

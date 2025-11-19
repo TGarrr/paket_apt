@@ -12,13 +12,13 @@
     <title>Apartement Paket - Login</title>
 
     <!-- Custom fonts for this template-->
-    <link href="{{ ('sbadmin2/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ 'sbadmin2/vendor/fontawesome-free/css/all.min.css' }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ ('sbadmin2/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ 'sbadmin2/css/sb-admin-2.min.css' }}" rel="stylesheet">
 
 </head>
 
@@ -41,14 +41,29 @@
                                             LOGIN
                                         </h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" method="POST" action="{{ route('loginProses') }}">
+                                        {{-- csrf untuk keamaanan dari lravel --}}
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                placeholder="Masukkan Email" name="email">
+                                            <input type="email"
+                                                class="form-control form-control-user @error('email') is-invalid @enderror"
+                                                placeholder="Masukkan Email" name="email" value="{{ old('email') }}">
+                                            @error('email')
+                                                <small class="text-danger">
+                                                    {{ $message }}
+                                                </small>
+                                            @enderror
                                         </div>
+
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
+                                            <input type="password"
+                                                class="form-control form-control-user  @error('password') is-invalid @enderror"
                                                 placeholder="Masukkan Password" name="password">
+                                            @error('password')
+                                                <small class="text-danger">
+                                                    {{ $message }}
+                                                </small>
+                                            @enderror
                                         </div>
                                         {{-- <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -57,7 +72,7 @@
                                                     Me</label>
                                             </div>
                                         </div> --}}
-                                        <button type="submit" href="#" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>
                                     </form>
@@ -78,14 +93,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ ('sbadmin2/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ ('sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ 'sbadmin2/vendor/jquery/jquery.min.js' }}"></script>
+    <script src="{{ 'sbadmin2/vendor/bootstrap/js/bootstrap.bundle.min.js' }}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{{ ('sbadmin2/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ 'sbadmin2/vendor/jquery-easing/jquery.easing.min.js' }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="{{ ('sbadmin2/js/sb-admin-2.min.js') }}"></script>
+    <script src="{{ 'sbadmin2/js/sb-admin-2.min.js' }}"></script>
 
 </body>
 
