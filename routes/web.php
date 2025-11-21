@@ -30,6 +30,7 @@ Route::middleware('checkLogin')->group(function () {
 
     // USER
     Route::get('user', [UserController::class, 'index'])->name('user');
+    Route::get('user/create', [UserController::class, 'create'])->name('userCreate');
 
     // TOWER
     Route::get('tower', [TowerController::class, 'index'])->name('tower');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -11,8 +12,19 @@ class UserController extends Controller
         $data = array(
             'title' => 'Data User',
             'menuUser' => 'active',
+            'user' => User::get(),
 
         );
         return view('admin/user/index', $data);
+    }
+
+    public function create()
+    {
+        $data = array(
+            'title' => 'Tambah Data User',
+            'menuUser' => 'active',
+
+        );
+        return view('admin/user/create', $data);
     }
 }

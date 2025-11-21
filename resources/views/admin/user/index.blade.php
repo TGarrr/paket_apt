@@ -10,7 +10,8 @@
     <div class="card">
         <div class="card-header d-flex fleex-warp justify-content-between align-items-center">
             <div class="mb-1">
-                <a href="#" class="btn btn-sm btn-warning"><i class="fas fa-plus mr-2"></i>Tambah Data</a>
+                <a href="{{ route('userCreate') }}" class="btn btn-sm btn-warning"><i class="fas fa-plus mr-2"></i>Tambah
+                    Data</a>
             </div>
             <div>
                 <a href="#" class="btn btn-sm btn-success">
@@ -27,36 +28,42 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr class="text-center">
+                            <th>No</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Jabatan</th>
-                            <th>Status</th>
                             <th><i class="fas fa-cog"></i></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="text-center">
-                            <td>Tegar</td>
-                            <td>Gar@gmail.com</td>
-                            <td class="text-center">
-                                <span class="badge badge-dark badge-pill">
-                                    Admin
-                                </span>
-                            </td>
-                            <td>
-                                <span class="badge badge-danger badge-pill">
-                                    Belum ditugaskan
-                                </span>
-                            </td>
-                            <td class="text-center">
-                                <a href="#" class="btn btn-warning btn-sm">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <a href="#" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        @foreach ($user as $item)
+                            <tr>
+                                <td class="text-center">{{ $loop->iteration }}</td>
+                                <td>{{ $item->nama }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td class="text-center">
+                                    @if ($item->jabatan == 'admin')
+                                        <span class="badge badge-success badge-success">
+                                            {{ $item->jabatan }}
+                                        </span>
+                                    @else
+                                        <span class="badge badge-primary badge-pill">
+                                            {{ $item->jabatan }}
+                                        </span>
+                                    @endif
+
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-warning">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+
+                                    <a href="#" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

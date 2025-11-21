@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             // 'id_user'  => 'USR001',
             'nama'      => 'Tegar',
             'jabatan'   => 'Admin',
-            'email'     => 'admin@gmail.com',
+            'email'     => 'tegar@gmail.com',
             'password'  => Hash::make('123456'),
         ]);
 
