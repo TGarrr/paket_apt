@@ -16,33 +16,67 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// DASHBOARD
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
 // LOGIN
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'loginProses'])->name('loginProses');
 
-// USER
-Route::get('user', [UserController::class, 'index'])->name('user');
+// LOGOUT
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-// TOWER
-Route::get('tower', [TowerController::class, 'index'])->name('tower');
 
-// UNIT
-Route::get('unit', [UnitController::class, 'index'])->name('unit');
+Route::middleware('checkLogin')->group(function () {
+    // DASHBOARD
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-// TENANT
-Route::get('tenant', [TenantController::class, 'index'])->name('tenant');
+    // USER
+    Route::get('user', [UserController::class, 'index'])->name('user');
 
-// CONTRACT
-Route::get('contract', [ContractController::class, 'index'])->name('contract');
+    // TOWER
+    Route::get('tower', [TowerController::class, 'index'])->name('tower');
 
-//JENIS TRANSAKSI
-Route::get('jenispaket', [JenisPaketController::class, 'index'])->name('jenispaket');
+    // UNIT
+    Route::get('unit', [UnitController::class, 'index'])->name('unit');
 
-// NAMA EKSPEDISI
-Route::get('namaekspedisi', [NamaEkspedisiController::class, 'index'])->name('namaekspedisi');
+    // TENANT
+    Route::get('tenant', [TenantController::class, 'index'])->name('tenant');
 
-//
-Route::get('transaksi', [TransaksiController::class, 'index'])->name('transaksi');
+    // CONTRACT
+    Route::get('contract', [ContractController::class, 'index'])->name('contract');
+
+    //JENIS TRANSAKSI
+    Route::get('jenispaket', [JenisPaketController::class, 'index'])->name('jenispaket');
+
+    // NAMA EKSPEDISI
+    Route::get('namaekspedisi', [NamaEkspedisiController::class, 'index'])->name('namaekspedisi');
+
+    //
+    Route::get('transaksi', [TransaksiController::class, 'index'])->name('transaksi');
+});
+
+
+// // DASHBOARD
+// Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+// // USER
+// Route::get('user', [UserController::class, 'index'])->name('user');
+
+// // TOWER
+// Route::get('tower', [TowerController::class, 'index'])->name('tower');
+
+// // UNIT
+// Route::get('unit', [UnitController::class, 'index'])->name('unit');
+
+// // TENANT
+// Route::get('tenant', [TenantController::class, 'index'])->name('tenant');
+
+// // CONTRACT
+// Route::get('contract', [ContractController::class, 'index'])->name('contract');
+
+// //JENIS TRANSAKSI
+// Route::get('jenispaket', [JenisPaketController::class, 'index'])->name('jenispaket');
+
+// // NAMA EKSPEDISI
+// Route::get('namaekspedisi', [NamaEkspedisiController::class, 'index'])->name('namaekspedisi');
+
+// //
+// Route::get('transaksi', [TransaksiController::class, 'index'])->name('transaksi');
